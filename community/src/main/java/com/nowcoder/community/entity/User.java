@@ -3,7 +3,7 @@ package com.nowcoder.community.entity;
 import java.util.Date;
 
 public class User {
-    private int id;
+    private Integer id;
     private String username;
     private String password;
     private String salt;
@@ -14,18 +14,18 @@ public class User {
     private String headerUrl;
     private Date createTime;
 
-    public User(int id, String username, String password, String salt, String email, int type, int status, String activationCode, String headerUrl, Date createTime) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.salt = salt;
-        this.email = email;
-        this.type = type;
-        this.status = status;
-        this.activationCode = activationCode;
-        this.headerUrl = headerUrl;
-        this.createTime = createTime;
-    }
+//    public User(int id, String username, String password, String salt, String email, int type, int status, String activationCode, String headerUrl, Date createTime) {
+//        this.id = id;
+//        this.username = username;
+//        this.password = password;
+//        this.salt = salt;
+//        this.email = email;
+//        this.type = type;
+//        this.status = status;
+//        this.activationCode = activationCode;
+//        this.headerUrl = headerUrl;
+//        this.createTime = createTime;
+//    }
 
     @Override
     public String toString() {
@@ -43,11 +43,11 @@ public class User {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -122,4 +122,6 @@ public class User {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+
 }

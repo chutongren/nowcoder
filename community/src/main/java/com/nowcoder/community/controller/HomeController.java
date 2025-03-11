@@ -43,10 +43,10 @@ public class HomeController {
                 discussPosts.add(map);
 
                 // 调试日志
-                System.out.println("Post ID: " + post.getId());
-                System.out.println("User ID: " + (user != null ? user.getId() : "null"));
-                System.out.println("Username: " + (user != null ? user.getUsername() : "null"));
-                System.out.println("Header URL: " + (user != null ? user.getHeaderUrl() : "null"));
+//                System.out.println("Post ID: " + post.getId());
+//                System.out.println("User ID: " + (user != null ? user.getId() : "null"));
+//                System.out.println("Username: " + (user != null ? user.getUsername() : "null"));
+//                System.out.println("Header URL: " + (user != null ? user.getHeaderUrl() : "null"));
             }
         }
         model.addAttribute("discussPosts", discussPosts);
