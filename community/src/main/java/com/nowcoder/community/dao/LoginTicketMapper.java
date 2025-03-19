@@ -20,12 +20,12 @@ public interface LoginTicketMapper {
     LoginTicket selectByTicket(String ticket);
 
     // update
-    @Update({"<script>",
-            "update login_ticket set status=#{status} where ticket = #{ticket}",
-            "<if test = \"ticket!=null\">",
+    @Update({
+            "<script>",
+            "update login_ticket set status=#{status} where ticket=#{ticket} ",
+            "<if test=\"ticket!=null\"> ",
             "</if>",
             "</script>"
     })
-
     int updateStatus(String ticket, int status);
 }

@@ -1,0 +1,18 @@
+2025-03-13 07:35:23,583 INFO [main] c.n.c.MapperTests [StartupInfoLogger.java:53] Starting MapperTests using Java 23.0.2 with PID 84092 (started by chutongren in /Users/chutongren/Documents/job/nowcoder/community)
+2025-03-13 07:35:23,586 INFO [main] c.n.c.MapperTests [SpringApplication.java:652] No active profile set, falling back to 1 default profile: "default"
+2025-03-13 07:35:24,281 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:59] Adding welcome page template: index
+2025-03-13 07:35:24,471 INFO [main] c.n.c.MapperTests [StartupInfoLogger.java:59] Started MapperTests in 1.129 seconds (process running for 1.573)
+2025-03-13 07:35:24,529 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:109] HikariPool-1 - Starting...
+2025-03-13 07:35:24,644 INFO [main] c.z.h.p.HikariPool [HikariPool.java:554] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4438938e
+2025-03-13 07:35:24,645 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:122] HikariPool-1 - Start completed.
+2025-03-13 07:35:24,826 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:349] HikariPool-1 - Shutdown initiated...
+2025-03-13 07:35:24,856 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:351] HikariPool-1 - Shutdown completed.
+2025-03-13 07:37:11,799 INFO [main] c.n.c.MapperTests [StartupInfoLogger.java:53] Starting MapperTests using Java 23.0.2 with PID 84162 (started by chutongren in /Users/chutongren/Documents/job/nowcoder/community)
+2025-03-13 07:37:11,800 INFO [main] c.n.c.MapperTests [SpringApplication.java:652] No active profile set, falling back to 1 default profile: "default"
+2025-03-13 07:37:12,460 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:59] Adding welcome page template: index
+2025-03-13 07:37:12,608 INFO [main] c.n.c.MapperTests [StartupInfoLogger.java:59] Started MapperTests in 1.033 seconds (process running for 1.425)
+2025-03-13 07:37:12,633 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:109] HikariPool-1 - Starting...
+2025-03-13 07:37:12,725 INFO [main] c.z.h.p.HikariPool [HikariPool.java:554] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1de5cc88
+2025-03-13 07:37:12,726 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:122] HikariPool-1 - Start completed.
+2025-03-13 07:37:12,771 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:349] HikariPool-1 - Shutdown initiated...
+2025-03-13 07:37:12,775 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:351] HikariPool-1 - Shutdown completed.

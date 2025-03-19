@@ -1,5 +1,6 @@
 package com.nowcoder.community.service;
 
+import com.nowcoder.community.controller.LoginController;
 import com.nowcoder.community.dao.LoginTicketMapper;
 import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.LoginTicket;
@@ -8,6 +9,8 @@ import com.nowcoder.community.util.CommunityConstant;
 import com.nowcoder.community.util.CommunityUtil;
 import com.nowcoder.community.util.MailClient;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -22,6 +25,8 @@ import java.util.Random;
 
 @Service
 public class UserService implements CommunityConstant {
+
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserMapper userMapper;
@@ -140,7 +145,9 @@ public class UserService implements CommunityConstant {
         }
 
         //验证密码
+        logger.info("password input: " + password);
         password = CommunityUtil.md5(password + user.getSalt());
+        logger.info("password compare: " + password + " " + user.getPassword());
         if(!user.getPassword().equals(password)){
             map.put("passwordMsg", "密码不正确！");
             return map;
@@ -154,7 +161,27 @@ public class UserService implements CommunityConstant {
         loginTicket.setExpired(new Date(System.currentTimeMillis() + 10000*60));
 
         loginTicketMapper.insertLoginTicket(loginTicket);
-        map.put("ticket","loginTicket.getTicket()");
+//        map.put("ticket","loginTicket.getTicket()");
+        map.put("ticket",loginTicket.getTicket());
         return map;
+    }
+
+    public void logout(String ticket){
+        LoginTicket loginTicket = loginTicketMapper.selectByTicket(ticket);
+        System.out.println(loginTicket);
+
+        loginTicketMapper.updateStatus(ticket, 1);
+//        LoginTicket loginTicket = loginTicketMapper.selectByTicket(ticket);
+        System.out.println(loginTicket);
+    }
+
+    //查询login凭证 login ticket
+    public LoginTicket findLoginTicket(String ticket){
+        return loginTicketMapper.selectByTicket(ticket);
+    }
+
+    //
+    public int updateHeader(int userId, String headerUrl){
+        return userMapper.updateHeader(userId, headerUrl);
     }
 }
