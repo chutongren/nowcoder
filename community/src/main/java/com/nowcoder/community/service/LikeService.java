@@ -31,7 +31,7 @@ public class LikeService {
             public Object execute(RedisOperations operations) throws DataAccessException {
                 String entityLikeKey = RedisKeyUtil.getEntityLikeKey(entityType, entityId);
                 String userLikeKey = RedisKeyUtil.getUserLikeKey(entityUserId);
-                boolean isMember = redisTemplate.opsForSet().isMember(entityLikeKey, userId);
+                boolean isMember = redisTemplate.opsForSet().isMember(entityLikeKey, userId); //ops=operations  for  set/string/...
 
                 operations.multi();
 
