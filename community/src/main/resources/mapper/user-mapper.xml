@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nowcoder.community.dao.UserMapper">
+<!--方便复用，比如我要增加一个字段，但是每个函数都得手动加，所以不如把这些写进一个sql中，给一个id，其余的可以引用这个id复用它-->
+    <sql id="insertFields">
+        username, password, salt, email, type, status, activation_code, header_url, create_time
+    </sql>
+
+    <sql id="selectFields">
+        id, username, password, salt, email, type, status, activation_code, header_url, create_time
+    </sql>
+
+    <select id="selectById" resultType="User">
+        select <include refid="selectFields"></include>
+        from user
+        where id = #{id}
+    </select>
+
+    <select id="selectByName" resultType="User">
+        select <include refid="selectFields"></include>
+        from user
+        where username = #{username}
+    </select>
+
+    <select id="selectByEmail" resultType="User">
+        select <include refid="selectFields"></include>
+        from user
+        where email = #{email}
+    </select>
+
+    <insert id="insertUser" parameterType="User" keyProperty="id">
+        insert into user (<include refid="insertFields"></include>)
+        values(#{username}, #{password}, #{salt}, #{email}, #{type}, #{status}, #{activationCode}, #{headerUrl}, #{createTime})
+    </insert>
+
+    <update id="updateStatus">
+        update user set status = #{status} where id = #{id}
+    </update>
+
+    <update id="updateHeader">
+        update user set header_url = #{headerUrl} where id = #{id}
+    </update>
+
+    <update id="updatePassword">
+        update user set password = #{password} where id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from user where id = #{id}
+    </delete>
+
+
+</mapper>

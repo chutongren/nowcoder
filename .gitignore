@@ -1,0 +1,9 @@
+# 忽略所有文件夹
+*/
+
+# 但保留 init_sql 和 community 文件夹及其内容
+!init_sql/
+!init_sql/**
+
+!community/
+!community/**
